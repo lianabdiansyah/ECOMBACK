@@ -24,3 +24,4 @@ Route::post('register',[UserController::class,'register']); //api register
 Route::post('login',[UserController::class,'login']); //api login
 Route::post('addproduk',[ProdukController::class,'addproduk']); //api addproduk
 Route::get('listproduk',[ProdukController::class,'listproduk']); //api listproduk
+Route::delete('deleteproduk/{id}',[ProdukController::class,'deleteproduk']); //api deleteproduk

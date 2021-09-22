@@ -12,7 +12,7 @@ class ProdukController extends Controller
         
         $product = new Product;
         $product->name = $request->input("name");
-        $product->file_path = $request->file("file")->store('produk');
+        $product->file_path = $request->file("file")->store('products');
         $product->description = $request->input("description");
         $product->price = $request->input("price");
         $product->save();
@@ -21,5 +21,13 @@ class ProdukController extends Controller
     
     function listproduk(){
         return Product::all();
+    }
+
+    function deleteproduk($id){
+        $produk = Product::where('id',$id)->delete();
+        if ($produk){
+            return ["message"=>"berhasil menghapus produk"];
+        }
+        // return $id;
     }
 }

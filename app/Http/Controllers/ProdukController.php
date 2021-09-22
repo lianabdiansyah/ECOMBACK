@@ -12,10 +12,14 @@ class ProdukController extends Controller
         
         $product = new Product;
         $product->name = $request->input("name");
-        $product->file_path = $request->file("file_path")->store('produk');
+        $product->file_path = $request->file("file")->store('produk');
         $product->description = $request->input("description");
         $product->price = $request->input("price");
         $product->save();
         return $product;
+    }
+    
+    function listproduk(){
+        return Product::all();
     }
 }

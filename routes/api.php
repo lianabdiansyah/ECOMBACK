@@ -25,3 +25,5 @@ Route::post('login',[UserController::class,'login']); //api login
 Route::post('addproduk',[ProdukController::class,'addproduk']); //api addproduk
 Route::get('listproduk',[ProdukController::class,'listproduk']); //api listproduk
 Route::delete('deleteproduk/{id}',[ProdukController::class,'deleteproduk']); //api deleteproduk
+Route::get('editproduk/{id}',[ProdukController::class,'editproduk']); //api editproduk
+Route::put('updateproduk/{id}',[ProdukController::class,'updateproduk']); //api updateproduk

@@ -30,4 +30,21 @@ class ProdukController extends Controller
         }
         // return $id;
     }
+
+    function editproduk($id){
+        return Product::find($id);
+    }
+    function updateproduk($id, request $request){
+        // return $request->input();
+        $product = Product::find($id);
+        $product->name = $request->input("name");
+        $product->description = $request->input("description");
+        $product->price = $request->input("price");
+        if ($request->file('file')){
+            $product->file_path = $request->file("file")->store('products');
+        }
+        $product->save();
+        return $product;
+
+    }
 }

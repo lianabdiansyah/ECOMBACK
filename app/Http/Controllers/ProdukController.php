@@ -45,6 +45,10 @@ class ProdukController extends Controller
         }
         $product->save();
         return $product;
-
+    }
+    
+    function searchproduk($key){
+        // return $key;
+        return Product::where('name','like',"%$key%")->get();
     }
 }

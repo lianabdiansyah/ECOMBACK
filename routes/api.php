@@ -27,3 +27,4 @@ Route::get('listproduk',[ProdukController::class,'listproduk']); //api listprodu
 Route::delete('deleteproduk/{id}',[ProdukController::class,'deleteproduk']); //api deleteproduk
 Route::get('editproduk/{id}',[ProdukController::class,'editproduk']); //api editproduk
 Route::put('updateproduk/{id}',[ProdukController::class,'updateproduk']); //api updateproduk
+Route::get('searchproduk/{key}',[ProdukController::class,'searchproduk']); //api searchproduk
